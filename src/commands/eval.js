@@ -45,7 +45,6 @@ module.exports.run = async (client, message, args) => {
 module.exports.data = {
 	name: 'eval',
 	description: 'Evaluate input using JavaScript',
-	type: 'admin',
 	hide: 'true',
 	aliases: null,
 };

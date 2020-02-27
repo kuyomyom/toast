@@ -46,10 +46,11 @@ database.guilds.delete = async (id) => {
 database.users = {};
 
 database.users.create = async (id, {
+	language = "EN-US",
 	premium = false,
 	blacklisted = false,
 } = {}) => {
-	const data = { premium, blacklisted };
+	const data = { language, premium, blacklisted };
 	const existing = await database.collection("users").get(id);
 	if (existing) return existing;
 	await database.collection("users").insert(id, data);

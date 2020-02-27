@@ -58,7 +58,6 @@ module.exports.run = (client, message, args, { guild }) => {
 module.exports.data = {
 	name: "help",
 	description: "Sends an embed containing command information",
-	type: "misc",
 	usage: ["!help"],
 	aliases: ["commands"],
 };
