@@ -1,5 +1,5 @@
 const { RichEmbed } = require("discord.js");
-const { Colors } = require("../config");
+const { Colors } = require("../../config");
 
 module.exports.run = (client, message, args, { guild }) => {
 	const { prefix } = guild;

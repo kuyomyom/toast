@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { Colors } = require('../config');
+const { Colors } = require('../../config');
 const options = ['yes', 'no', 'maybe', 'perhaps', 'reply hazy, ask again later', 'of course', 'definitely not'];
 
 module.exports.run = (client, message, args) => {
