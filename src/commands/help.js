@@ -35,9 +35,9 @@ module.exports.run = (client, message, args, { guild }) => {
 	}
 	else {
 		const commands = client.commands.filter(c => !c.data.hide);
-		noargs.addField(
+		/*noargs.addField(
 			"Moderation", commands.filter(c => c.data.type === "mod").map(c => `${c.data.name} ➜ \`${c.data.usage[0]}\`\n`).join("").replace(/!/g, prefix)
-		);
+		);*/
 		noargs.addField(
 			"Fun", commands.filter(c => c.data.type === "fun").map(c => `${c.data.name} ➜ \`${c.data.usage[0]}\`\n`).join("").replace(/!/g, prefix)
 		);
