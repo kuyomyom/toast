@@ -25,7 +25,7 @@ module.exports.run = (client, message, args, { guild }) => {
 module.exports.data = {
 	name: "about",
 	description: "View some bot statistics.",
+	type: "util",
 	usage: ["!about"],
 	aliases: ["info", "invite"],
-	permissions: null,
 };

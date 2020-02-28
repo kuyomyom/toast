@@ -37,6 +37,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 module.exports.data = {
 	name: 'serverinfo',
 	description: 'Sends an embed with server info',
+	type: "util",
 	usage: ['!serverinfo'],
 	aliases: ['server'],
 };

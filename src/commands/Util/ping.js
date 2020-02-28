@@ -15,6 +15,7 @@ module.exports.run = async (_client, message) => {
 
 module.exports.data = {
 	name: 'ping',
+	type: "util",
 	hide: true,
 	aliases: null,
 };

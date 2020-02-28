@@ -1,0 +1,27 @@
+{
+  "name": "toast",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <img width=\"500\" height=\"150\" src=\"https://i.undecidedfactor.com/1/banner.png\">\r </p>",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "mongodb": "^3.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UndecidedSource/toast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UndecidedSource/toast/issues"
+  },
+  "homepage": "https://github.com/UndecidedSource/toast#readme"
+}

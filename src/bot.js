@@ -31,15 +31,20 @@ fs.readdir("./events/", (err, files) => {
 client.commands = new Collection();
 client.aliases = new Collection();
 
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./commands/", (err, folders) => {
 	if (err) return console.error(err);
-	files.forEach(file => {
-		if (!file.endsWith(".js")) return;
-		const props = require("./commands/" + file);
-		const name = file.split(".")[0];
-		client.commands.set(name, props);
-		if(props.data && props.data.aliases)
-			for(const alias of props.data.aliases)
-				client.aliases.set(alias, name);
+	folders.forEach(folder => {
+		fs.readdir(`./commands/${folder}/`, (err, files) => {
+			if (err) return console.error(err);
+			files.forEach(file => {
+				if (!file.endsWith(".js")) return;
+				const props = require(`./commands/${folder}/` + file);
+				const name = file.split(".")[0];
+				client.commands.set(name, props);
+				if(props.data && props.data.aliases)
+					for(const alias of props.data.aliases)
+						client.aliases.set(alias, name);
+			});
+		});
 	});
 });

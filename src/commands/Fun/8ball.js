@@ -20,6 +20,7 @@ module.exports.run = (client, message, args) => {
 module.exports.data = {
 	name: '8ball',
 	description: 'Ask the magic 8ball a question',
+	type: "fun",
 	usage: ['!8ball <question>'],
 	aliases: null,
 };
