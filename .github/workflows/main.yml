@@ -16,4 +16,4 @@ jobs:
         script: |
           cd toast
           git pull origin master
-          pm2 restart 3
+          pm2 restart 5
