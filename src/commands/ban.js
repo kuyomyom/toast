@@ -36,4 +36,5 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!ban <user> [reason]"],
 	aliases: null,
+	permissions: ["Moderator"]
 };

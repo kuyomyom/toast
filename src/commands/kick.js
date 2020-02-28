@@ -36,4 +36,5 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!kick <user> [reason]"],
 	aliases: null,
+	permissions: ["Moderator"]
 };
