@@ -13,7 +13,7 @@ module.exports = async (client) => {
 	});
 
 	const readyEmbed = new RichEmbed()
-		.setTitle(`${username}: Process Started Successfully`)
+		.setTitle(`${username}: Process Started`)
 		.setColor('3483eb')
 		.setDescription(`${username} has successfully logged in. Check the footer to view the exact time.`)
 		.setTimestamp();

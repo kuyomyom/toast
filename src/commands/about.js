@@ -2,14 +2,8 @@ const { RichEmbed } = require("discord.js");
 const { Colors } = require("../config");
 
 module.exports.run = async (client, message, args, { guild }) => {
-	const promises = [
-		client.shard.fetchClientValues('guilds.cache.size'),
-		client.shard.broadcastEval('this.guilds.cache.reduce((prev, guild) => prev + guild.memberCount, 0)'),
-	];
-
-	const results = await Promise.all(promises)
-	const totalGuilds = results[0].reduce((prev, guildCount) => prev + guildCount, 0);
-	const totalMembers = results[1].reduce((prev, memberCount) => prev + memberCount, 0);
+	const totalGuilds = await client.shard.fetchClientValues('guilds.size');
+	const totalMembers = await client.shard.broadcastEval('this.guilds.reduce((prev, guild) => prev + guild.memberCount, 0)');
 
 	const embed = new RichEmbed()
 		.setTitle("About")
