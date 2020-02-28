@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { Colors } = require('../../config');
+const { Colors } = require('../config');
 const { Util } = require('discord.js');
 const moment = require('moment');
 

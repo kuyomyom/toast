@@ -1,7 +1,7 @@
 const { RichEmbed } = require("discord.js");
-const { Colors } = require("../../config");
+const { Colors } = require("../config");
 
-module.exports.run = (client, message, args, { guild }) => {
+module.exports.run = async (client, message, args, { guild }) => {
 	const promises = [
 		client.shard.fetchClientValues('guilds.cache.size'),
 		client.shard.broadcastEval('this.guilds.cache.reduce((prev, guild) => prev + guild.memberCount, 0)'),

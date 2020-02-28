@@ -1,5 +1,3 @@
-const nil = require("./nil");
-
 module.exports = async (message, user, guild) => {
     const { author: userObj, guild: guildObj } = message;
     const moderation = new Map(guild.moderation) || [];
@@ -12,15 +10,15 @@ module.exports = async (message, user, guild) => {
 
     if (points >= moderation.get(kick)) {
         await userObj.send(`You have been kicked from ${guildObj.name} for recieving ${moderation.kick} warnings!`)
-            .catch(nil);
+            .catch(e);
         await guildObj.kick(user._id, `Recieved ${moderation.kick} warnings.`)
-            .catch(nil);
+            .catch(e);
     }
 
     if (points >= moderation.get(ban)) {
         await userObj.send(`You have been banned from ${guildObj.name} for recieving ${moderation.ban} warnings!`)
-            .catch(nil);
+            .catch(e);
         await guildObj.ban(user._id, `Recieved ${moderation.ban} warnings.`)
-            .catch(nil);
+            .catch(e);
     }
 };

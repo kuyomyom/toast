@@ -1,6 +1,6 @@
 const { RichEmbed } = require('discord.js');
 const { inspect } = require('util');
-const { Access, Colors } = require('../../config');
+const { Access, Colors } = require('../config');
 
 module.exports.run = async (client, message, args) => {
 	if (!Access.DEVELOPERS.includes(message.author.id)) return;
