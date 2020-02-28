@@ -6,11 +6,9 @@ module.exports.run = async (client, message, args, { guild }) => {
 	const totalMembers = await client.shard.broadcastEval('this.guilds.reduce((prev, guild) => prev + guild.memberCount, 0)');
 
 	const embed = new RichEmbed()
-		.setTitle("About")
+		.setTitle("Stats")
 		.setColor(Colors.DEFAULT)
-		.addField("About", "Toast is a multipurpose bot that is perfect for any server. The bot contains all the tools you need for moderation and fun.")
-		.addField("Stats", `**Users:** ${totalMembers}\n**Servers:** ${totalGuilds}\n**Prefix:** ${guild.prefix}`)
-		.addField("Invite the Bot", "You can invite the bot using the [Invite Link](https://discordapp.com/oauth2/authorize?client_id=682377571605938220&permissions=8&scope=bot)")
+		.setDescription(`**Toast**\n• Currently serving \`${totalGuilds}\` guilds and \`${totalMembers}\` users\n• This server is running on shard \`${client.shard.id}\`\n• [Invite Toast](https://discordapp.com/oauth2/authorize?client_id=682377571605938220&permissions=8&scope=bot)`)
 		.setFooter(message.author.tag, message.author.displayAvatarURL);
 
 	message.channel.send(embed);
@@ -21,5 +19,5 @@ module.exports.data = {
 	description: "View some bot statistics.",
 	type: "util",
 	usage: ["!about"],
-	aliases: ["info", "invite"],
+	aliases: ["invite", "about"],
 };
