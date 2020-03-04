@@ -21,10 +21,10 @@ module.exports = async (client, message, args, funcs) => {
         if (command.data.guildOnly && !message.guild) return;
 
         if (command.data.permissions) {
-            if (command.data.permissions.has("Moderator")) {
+            if (command.data.permissions["Moderator"]) {
                 if (!message.member.roles.get(modrole) && !message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(embed);
             }
-            if (command.data.permissions.has("Administrator")) {
+            if (command.data.permissions["Administrator"]) {
                 if (!message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(embed);
             }
         } 
