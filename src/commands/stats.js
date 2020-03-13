@@ -18,6 +18,6 @@ module.exports.data = {
 	name: "about",
 	description: "View some bot statistics.",
 	type: "util",
-	usage: ["!about"],
+	usage: ["!stats"],
 	aliases: ["invite", "about"],
 };

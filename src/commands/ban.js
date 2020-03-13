@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 	);
 
 	if (!memberMention.bannable) return message.channel.send(
-		new RichEmbed().setTitle("Ban").setColor(Colors.FAILED).setDescription("I cannot ban the mentioned user. Make sure the Aero role is above the other roles.").setFooter(message.author.tag, message.author.displayAvatarURL)
+		new RichEmbed().setTitle("Ban").setColor(Colors.FAILED).setDescription("I cannot ban the mentioned user. Make sure the Toast role is above the other roles.").setFooter(message.author.tag, message.author.displayAvatarURL)
 	);
 
 	await memberMention.ban(reason)
