@@ -40,4 +40,5 @@ module.exports.data = {
 	type: "util",
 	usage: ['!serverinfo'],
 	aliases: ['server'],
+	guildOnly: true
 };

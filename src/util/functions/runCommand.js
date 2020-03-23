@@ -11,21 +11,24 @@ module.exports = async (client, message, args, funcs) => {
     }
     command = client.commands.get(command);
 
-    const embed = new RichEmbed()
-        .setTitle("Incorrect Permissions")
-        .setColor(Colors.FAILED)
-        .setDescription("You do not have permission to use this command. If you think you have encountered this in error, feel free to contact us.")
-        .setFooter(message.author.tag, message.author.displayAvatarURL);
+    function noPermission(required, channel) {
+        const embed = new RichEmbed()
+            .setTitle("Incorrect Permissions")
+            .setColor(Colors.FAILED)
+            .setDescription(`You do not have the permissions required. Required: \`${required}\``)
+            .setFooter(message.author.tag, message.author.displayAvatarURL);
+        return channel.send(embed)
+    }
 
     try {
         if (command.data.guildOnly && !message.guild) return;
 
         if (command.data.permissions) {
             if (command.data.permissions["Moderator"]) {
-                if (!message.member.roles.get(modrole) && !message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(embed);
+                if (!message.member.roles.get(modrole) && !message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Moderator", message.channel);
             }
             if (command.data.permissions["Administrator"]) {
-                if (!message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(embed);
+                if (!message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Administrator", message.channel);
             }
         } 
 

@@ -27,5 +27,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!clear <amount> [@user]"],
 	aliases: ["purge"],
-	permissions: ["Moderator"]
+	permissions: ["Moderator"],
+	guildOnly: true
 };
