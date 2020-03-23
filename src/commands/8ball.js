@@ -3,11 +3,10 @@ const { Colors } = require('../config');
 const options = ['yes', 'no', 'maybe', 'perhaps', 'reply hazy, ask again later', 'of course', 'definitely not'];
 
 module.exports.run = async (client, message, args, { guild, user, error }) => {	
-	const language = require(`../util/languages/${user.language}`);
 	if (!args[0]) return message.channel.send(new RichEmbed()
 		.setTitle('8ball')
 		.setColor(Colors.DEFAULT)
-		.setDescription(language.COMMAND_8BALL_MISSING_ARGS)
+		.setDescription("You must provide a valid question to ask the 8ball")
 		.setFooter(message.author.tag, message.author.displayAvatarURL));
 
 	const embed = new RichEmbed()
