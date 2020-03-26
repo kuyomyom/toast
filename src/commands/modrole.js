@@ -27,7 +27,6 @@ module.exports.data = {
 	name: "modrole",
 	description: "Sets the moderator role",
 	type: "mod",
-	restricted: true,
 	usage: ["!modrole <role>"],
 	aliases: null,
 	permissions: ["Administrator"],

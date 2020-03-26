@@ -50,7 +50,7 @@ module.exports.run = async (client, message, args, { guild, error }) => {
 module.exports.data = {
     name: "warnings",
     description: "View the mentioned user\"s warnings",
-    type: "Administration",
+    type: "mod",
     usage: ["!warnings <user>"],
     aliases: null,
     permissions: ["Moderator"],

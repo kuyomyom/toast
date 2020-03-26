@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args, { guild }) => {
 };
 
 module.exports.data = {
-	name: "about",
+	name: "stats",
 	description: "View some bot statistics.",
 	type: "util",
 	usage: ["!stats"],

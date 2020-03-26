@@ -2,7 +2,6 @@ const { RichEmbed } = require("discord.js");
 const { Colors } = require("../config");
 
 module.exports.run = async (client, message, args, { guild, user, error }) => {
-
 	const memberMention = message.mentions.members.first();
 	const reason = args.slice(2).join(" ") || "None provided";
 	if (!memberMention) return message.channel.send(

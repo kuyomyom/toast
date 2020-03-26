@@ -57,7 +57,6 @@ module.exports.data = {
 	name: "prefix",
 	description: "View or set the server\"s prefix",
 	type: "mod",
-	restricted: true,
 	usage: ["!prefix set <prefix>"],
 	aliases: ["pfx", "pfxs", "prefixes", "guildprefix", "trigger", "triggers"],
 	permissions: ["Administrator"],
