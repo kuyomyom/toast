@@ -21,7 +21,9 @@ module.exports = async (client, message, args, funcs) => {
     }
 
     try {
-        if (command.data.guildOnly && !message.guild) return;
+        if (command.data.guildOnly) {
+        	if (!message.guild) return;
+        }
 
         if (command.data.permissions) {
             if (command.data.permissions["Moderator"]) {
