@@ -15,5 +15,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd toast
-          git pull origin master
+          git fetch && git reset --hard origin/master
           pm2 restart 2
