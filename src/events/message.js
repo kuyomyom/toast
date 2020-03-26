@@ -1,16 +1,18 @@
 const { RichEmbed } = require("discord.js");
 const { Logging } = require("../config");
-const { runCommand, initDB, filterString } = require("../util/packages/Functions");
+const { runCommand, initDB, filterString, ensureLeveling, updateLeveling } = require("../util/packages/Functions");
 
 module.exports = async (client, message) => {
 	if (message.author.bot) return;
 
 	let [user, guild] = await initDB(message);
 	filterString(message, guild);
+	[user, guild] = await ensureLeveling(user, guild);
 
 	const prefixes = [`<@${client.user.id}>`, `<@!${client.user.id}>`].concat(guild.prefix);
 	let prefix = false;
 	for (const p of prefixes) message.content.startsWith(p) ? prefix = p : null;
+	if (!prefix) return [user, guild] = await updateLeveling(user, guild, message);
 
 	const args = message.content.slice(prefix.length).trim().split(" ");
 
