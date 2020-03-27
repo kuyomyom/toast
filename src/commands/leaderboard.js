@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 	try {
 		if (!guild.levelingactive) return message.channel.send("Leveling is not enabled for this server.");
 
-		await guild.fetchMembers();
+		await message.guild.fetchMembers();
 
 		text = "";
 		Array.from(guild.leveling.values())
