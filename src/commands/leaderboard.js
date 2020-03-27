@@ -6,6 +6,8 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 	try {
 		if (!guild.levelingactive) return message.channel.send("Leveling is not enabled for this server.");
 
+		console.log(Array.from(map.values()));
+
 		text = "";
 		Array.from(guild.leveling.values())
     		.sort((a, b) => b[2].level - a[2].level)
