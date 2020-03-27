@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 const { inspect } = require('util');
 const { Access, Colors } = require('../config');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, { guild }) => {
 	if (!Access.DEVELOPERS.includes(message.author.id)) return;
 
 	let ev = args.join(' ');
