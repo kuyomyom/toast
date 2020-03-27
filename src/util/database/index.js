@@ -8,8 +8,8 @@ database.guilds = {};
 
 database.guilds.create = async (id, {
 	prefix = "t!",
-	modrole = "0",
-	adminrole = "0",
+	modrole = "abcd",
+	adminrole = "abcd",
 	premium = false,
 	wordblacklistactive = false,
 	levelingactive = true,
