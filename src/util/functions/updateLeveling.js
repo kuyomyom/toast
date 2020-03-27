@@ -1,6 +1,6 @@
 const database = require("../database");
 const { RichEmbed } = require("discord.js");
-const { Colors } = require("../config");
+const { Colors } = require("../../config");
 
 module.exports = async (user, guild, message) => {
     const { leveling, levelingactive } = guild;
@@ -8,6 +8,7 @@ module.exports = async (user, guild, message) => {
 		function LevelUp(user, message, level) {
 			let embed = new RichEmbed()
 			.setTitle("Level Up!")
+			.setColor(Colors.SUCCESS)
 			.setDescription(`Congrats, **${user.name}**, you've advanced to level ${level}`);
 			message.channel.send(embed);
 		}
