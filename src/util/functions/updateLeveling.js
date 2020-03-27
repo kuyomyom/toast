@@ -28,7 +28,7 @@ module.exports = async (user, guild, message) => {
 
             if (userLeveling.xp >= userLeveling.lastXP) {
                 userLeveling.level++;
-                userLeveling.lastXP *= 2.2;
+                math.floor(userLeveling.lastXP *= 2.2);
                 LevelUp(message.author, message, userLeveling.level);
             }
 
