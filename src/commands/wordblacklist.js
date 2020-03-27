@@ -72,6 +72,6 @@ module.exports.data = {
 	type: 'mod',
 	usage: ['!wordblacklist <enable/disable/add/remove> [word]'],
 	aliases: null,
-	permissions: ["Administrator"],
+	permissions: "Administrator",
 	guildOnly: true
 };

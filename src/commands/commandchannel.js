@@ -53,6 +53,6 @@ module.exports.data = {
 	type: 'mod',
 	usage: ['!commandchannel <#channel/false/true>'],
 	aliases: null,
-	permissions: ["Administrator"],
+	permissions: "Administrator",
 	guildOnly: true
 };

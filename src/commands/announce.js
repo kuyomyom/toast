@@ -38,6 +38,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!announce <title>|<description>|<channelname>"],
 	aliases: ["ann"],
-	permissions: ["Moderator"],
+	permissions: "Moderator",
 	guildOnly: true
 };

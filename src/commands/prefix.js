@@ -59,6 +59,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!prefix set <prefix>"],
 	aliases: ["pfx", "pfxs", "prefixes", "guildprefix", "trigger", "triggers"],
-	permissions: ["Administrator"],
+	permissions: "Administrator",
 	guildOnly: true
 };

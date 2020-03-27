@@ -29,6 +29,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!adminrole <role>"],
 	aliases: null,
-	permissions: ["Administrator"],
+	permissions: "Administrator",
 	guildOnly: true
 };

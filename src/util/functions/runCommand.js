@@ -26,10 +26,10 @@ module.exports = async (client, message, args, funcs) => {
         }
 
         if (command.data.permissions) {
-            if (command.data.permissions["Moderator"]) {
+            if (command.data.permission === "Moderator") {
                 if (!message.member.roles.get(modrole) && !message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Moderator", message.channel);
             }
-            if (command.data.permissions["Administrator"]) {
+            if (command.data.permission === "Administrator") {
                 if (!message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Administrator", message.channel);
             }
         } 

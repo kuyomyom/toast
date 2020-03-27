@@ -35,6 +35,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!softban <user> [reason]"],
 	aliases: null,
-	permissions: ["Moderator"],
+	permissions: "Moderator",
 	guildOnly: true
 };

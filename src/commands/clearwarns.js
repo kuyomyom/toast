@@ -40,6 +40,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!clearwarns <user>"],
 	aliases: ["removewarns"],
-	permissions: ["Moderator"],
+	permissions: "Moderator",
 	guildOnly: true
 };

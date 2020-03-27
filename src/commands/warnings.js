@@ -53,6 +53,6 @@ module.exports.data = {
     type: "mod",
     usage: ["!warnings <user>"],
     aliases: null,
-    permissions: ["Moderator"],
+    permissions: "Moderator",
     guildOnly: true
 };

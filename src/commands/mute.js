@@ -45,6 +45,6 @@ module.exports.data = {
 	type: "mod",
 	usage: ["!mute <user> <time>"],
 	aliases: null,
-	permissions: ["Moderator"],
+	permissions: "Moderator",
 	guildOnly: true
 };
