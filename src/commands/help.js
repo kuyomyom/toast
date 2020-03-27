@@ -32,8 +32,7 @@ module.exports.run = (client, message, args, { guild }) => {
 		embed.addField("Description", description);
 		embed.addField("Usage", `\`${usage}\``);
 		message.channel.send(embed);
-	}
-	else {
+	} else {
 		const commands = client.commands.filter(c => !c.data.hide);
 		noargs.addField(
 			"Moderation", commands.filter(c => c.data.type === "mod").map(c => `${c.data.name} ➜ \`${c.data.usage[0]}\`\n`).join("").replace(/!/g, prefix)
@@ -44,12 +43,17 @@ module.exports.run = (client, message, args, { guild }) => {
 		noargs.addField(
 			"Utility", commands.filter(c => c.data.type === "util").map(c => `${c.data.name} ➜ \`${c.data.usage[0]}\`\n`).join("").replace(/!/g, prefix)
 		);
-		message.author.send(noargs);
-		message.channel.send(new RichEmbed()
-			.setTitle("Help")
-			.setDescription("I have sent you my list of help commands, please check your DMs")
-			.setColor(Colors.DEFAULT)
-			.setFooter(message.author.tag, message.author.displayAvatarURL));
+		message.author.send(noargs)
+			.then(() => {
+				message.channel.send(new RichEmbed()
+					.setTitle("Help")
+					.setDescription("I have sent you my list of help commands, please check your DMs")
+					.setColor(Colors.DEFAULT)
+					.setFooter(message.author.tag, message.author.displayAvatarURL));
+			})
+			.catch(() => {
+				message.channel.send(noargs);
+			});
 	}
 
 };
