@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 			.setTitle(`${targetMember.user.tag}'s level`)
 			.setColor(Colors.DEFAULT)
 			.setThumbnail(targetMember.user.displayAvatarURL)
-			.setDescription(`**Level ${userLevel.level}**\n• ` + (userLevel.lastXP - userLevel.xp).toString() + `xp needed to level up`)
+			.setDescription(`**Level ${userLevel.level}**\n• ` + Math.floor((userLevel.lastXP - userLevel.xp)).toString() + `xp needed to level up`)
 
 		message.channel.send(embed);
 	}
