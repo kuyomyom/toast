@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args, { guild }) => {
 	const embed = new RichEmbed()
 		.setTitle("Stats")
 		.setColor(Colors.DEFAULT)
-		.setDescription(`**Toast**\n• Currently serving \`${totalGuilds}\` guilds and \`${totalMembers}\` users\n• This server is running on shard \`${client.shard.id}\`\n• [Invite Toast](https://discordapp.com/oauth2/authorize?client_id=682377571605938220&permissions=8&scope=bot)`)
+		.setDescription(`**Toast**\n• Currently serving \`${totalGuilds}\` guilds and \`${totalMembers}\` users\n• This server is running on shard \`${client.shard.id}\`\n• [Invite Toast](https://discordapp.com/oauth2/authorize?client_id=682377571605938220&permissions=8&scope=bot)\n• [Rate Toast](https://bots.ondiscord.xyz/bots/682377571605938220/review)`)
 		.setFooter(message.author.tag, message.author.displayAvatarURL);
 
 	message.channel.send(embed);
