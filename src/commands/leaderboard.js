@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 		
 		const leveling = Array.from(guild.leveling);
 		
-		let sort = Object.keys(leveling).sort((a, b) => leveling[a].level - leveing[b].level);
+		let sort = Object.keys(leveling).sort((a, b) => leveling[a].level - leveling[b].level);
 		
 		console.log(sort);
 
