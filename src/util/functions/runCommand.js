@@ -27,14 +27,14 @@ module.exports = async (client, message, args, funcs) => {
 
         if (command.data.permissions) {
             if (command.data.permissions["Moderator"]) {
-                if (!message.member.roles.get(modrole) && !message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Moderator", message.channel);
+                if (!message.member.roles.get(modrole) || !message.member.roles.get(adminrole) || !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Moderator", message.channel);
             }
             if (command.data.permissions["Administrator"]) {
-                if (!message.member.roles.get(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Administrator", message.channel);
+                if (!message.member.roles.get(adminrole) || !message.member.hasPermission("ADMINISTRATOR")) return noPermission("Administrator", message.channel);
             }
         } 
 
-        if (!commandchannels.length === 0) {
+        if (commandchannels.length !== 0) {
             if (!message.member.roles.get(modrole) || !message.member.roles.has(adminrole) || !message.member.hasPermission("ADMINISTRATOR")) {
                 if (!commandchannels.includes(message.channel.id)) return;
             }
