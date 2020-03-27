@@ -34,8 +34,8 @@ module.exports = async (client, message, args, funcs) => {
             }
         } 
 
-        if (!commandchannels.length === 0) {
-            if (!message.member.roles.get(modrole) || !message.member.roles.has(adminrole) || !message.member.hasPermission("ADMINISTRATOR")) {
+        if (commandchannels.length !== 0) {
+            if (!message.member.roles.get(modrole) && !message.member.roles.has(adminrole) && !message.member.hasPermission("ADMINISTRATOR")) {
                 if (!commandchannels.includes(message.channel.id)) return;
             }
         }
