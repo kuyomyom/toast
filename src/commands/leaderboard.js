@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 		
 		let sort = Object.keys(leveling).sort((a, b) => leveling[a].level - leveing[b].level);
 		
-		message.channel.send(sort)
+		console.log(sort);
 
 		const embed = new RichEmbed()
 			.setTitle("Leaderboard")
