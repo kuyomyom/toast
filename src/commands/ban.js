@@ -2,7 +2,6 @@ const { RichEmbed } = require("discord.js");
 const { Colors } = require("../config");
 
 module.exports.run = async (client, message, args, { guild, user, error }) => {
-
 	const memberMention = message.mentions.members.first();
 	const reason = args.slice(1).join(" ") || "None provided";
 	if (!memberMention) return message.channel.send(
@@ -21,6 +20,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 
 	const makeEmbed = new RichEmbed()
 		.setTitle("Ban")
+		.setColor(Colors.SUCCESS)
 		.setDescription(`Successfully banned ${memberMention.user.tag} from the server!`)
 		.addField("Moderator", `${message.author.tag} (${message.author.id})`)
 		.addField("Reason", reason)

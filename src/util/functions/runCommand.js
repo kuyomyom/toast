@@ -17,7 +17,7 @@ module.exports = async (client, message, args, funcs) => {
             .setColor(Colors.FAILED)
             .setDescription(`You do not have the permissions required. Required: \`${required}\``)
             .setFooter(message.author.tag, message.author.displayAvatarURL);
-        return channel.send(embed)
+        return channel.send(embed);
     }
 
     try {
