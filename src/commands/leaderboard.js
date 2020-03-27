@@ -5,8 +5,10 @@ const { Colors } = require("../config");
 module.exports.run = async (client, message, args, { guild, user, error }) => {
 	try {
 		if (!guild.levelingactive) return message.channel.send("Leveling is not enabled for this server.");
-		const test = Array.from(guild.leveling);
-		let sort = Object.keys(test).sort((a, b) => test[a].level - test[b].level);
+		
+		const leveling = Array.from(guild.leveling);
+		
+		let sort = Object.keys(leveling).sort((a, b) => leveling[a].level - leveing[b].level);
 		
 		message.channel.send(sort)
 
