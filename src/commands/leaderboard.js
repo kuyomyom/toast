@@ -6,13 +6,11 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 	try {
 		if (!guild.levelingactive) return message.channel.send("Leveling is not enabled for this server.");
 
-		error((Array.from(guild.leveling.values())));
-
 		text = "";
 		Array.from(guild.leveling.values())
-    		.sort((a, b) => b[2].level - a[2].level)
+    		.sort((a, b) => b[1].level - a[1].level)
    			.splice(0, 9)
-    		.map(i => `• **${client.users.get(i).tag}**\n\tLevel: ${(i[2].level).toString()}\n\tXP: ${(i[2].xp).toString()}`)
+    		.map(i => `• **${client.users.get(i).tag}**\n\tLevel: ${(i[1].level).toString()}\n\tXP: ${(i[1].xp).toString()}`)
 				 .forEach(i => text += i + "\n")
 
 		const embed = new RichEmbed()
