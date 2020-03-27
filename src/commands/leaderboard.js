@@ -6,7 +6,9 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 	try {
 		if (!guild.levelingactive) return message.channel.send("Leveling is not enabled for this server.");
 		
-		const leveling = new Map(guild.leveling);
+		let sort = Object.keys(guild.leveling).sort((a, b) => guild.leveling[a].level - guild.leveling[b].level);
+		
+		message.channel.send(sort)
 
 		const embed = new RichEmbed()
 			.setTitle("Leaderboard")
