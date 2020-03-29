@@ -1,4 +1,4 @@
-const DBL = require("dblapi.js");
+// const DBL = require("dblapi.js");
 const { config } = require("dotenv");
 const { RichEmbed, Client } = require('discord.js');
 const { Info, Logging } = require('../config');
