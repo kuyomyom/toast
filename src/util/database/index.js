@@ -11,6 +11,7 @@ database.guilds.create = async (id, {
 	modrole = "abcd",
 	adminrole = "abcd",
 	premium = false,
+	logchannel = null,
 	wordblacklistactive = false,
 	levelingactive = true,
 	economyactive = false,

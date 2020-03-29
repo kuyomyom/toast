@@ -1,6 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const { Colors } = require("../config");
 const database = require("../util/database");
+const { log } = require("../util/packages/Functions");
 
 const triggers = [
 	["add", "create", "append", "a"],
@@ -48,6 +49,8 @@ module.exports.run = (client, message, args, { guild }) => {
 			.setColor(Colors.SUCCESS)
 			.setDescription("Successfully set the prefix to: `" + newPrefix + "`")
 			.setFooter(message.author.tag, message.author.displayAvatarURL);
+
+		log(guild, "Prefix", message.author.tag, "Set to", newPrefix);
 
 		return message.channel.send(setPrefix);
 	}

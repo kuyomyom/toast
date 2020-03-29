@@ -1,6 +1,7 @@
 const { RichEmbed } = require('discord.js');
 const { Colors } = require('../config');
 const database = require('../util/database');
+const { log } = require("../util/packages/Functions");
 
 module.exports.run = async (client, message, args, { guild, error }) => {
 	try {
@@ -40,6 +41,8 @@ module.exports.run = async (client, message, args, { guild, error }) => {
 			.setTimestamp();
 
 		message.channel.send(filterEmbed);
+
+		log(guild, "Command Channel", message.author.tag, "Channel", `${message.mentions.channels.first().name} - ${t}`);
 
 	}
 	catch (e) {

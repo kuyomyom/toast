@@ -1,6 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const { Colors } = require("../config");
 const database = require("../util/database");
+const { log } = require("../util/packages/Functions");
 
 module.exports.run = async (client, message, args, { error }) => {
 	try {
@@ -17,6 +18,8 @@ module.exports.run = async (client, message, args, { error }) => {
 			.setFooter(message.author.tag, message.author.displayAvatarURL)
 			.setTimestamp();
 		message.channel.send(adminEmbed);
+
+		log(guild, "Admin Role", message.author.tag, "Role", newRole);
 	}
 	catch (e) {
 		error(e.stack);

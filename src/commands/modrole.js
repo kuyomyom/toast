@@ -1,6 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const { Colors } = require("../config");
 const database = require("../util/database");
+const { log } = require("../util/packages/Functions");
 
 module.exports.run = async (client, message, args, { guild, error }) => {
 	try {
@@ -11,12 +12,14 @@ module.exports.run = async (client, message, args, { guild, error }) => {
 
 		database.guilds.update(message.guild.id, { modrole: (newRole.id) });
 		const adminEmbed = new RichEmbed()
-			.setTitle("Adminrole")
+			.setTitle("Modrole")
 			.setColor(Colors.SUCCESS)
 			.setDescription(`**Moderator**: ${message.author.tag}\n**Mod role**: ${newRole}`)
 			.setFooter(message.author.tag, message.author.displayAvatarURL)
 			.setTimestamp();
 		message.channel.send(adminEmbed);
+
+		log(guild, "Mod Role", message.author.tag, "Role", newRole);
 	}
 	catch (e) {
 		error(e.stack);
