@@ -41,8 +41,6 @@ database.guilds.delete = async (id) => {
 	return await database.collection("guilds").delete(id);
 };
 
-await database.guilds.updateMany({}, { $set: { logchannel: null } });
-
 // Users
 
 database.users = {};
