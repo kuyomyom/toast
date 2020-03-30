@@ -5,11 +5,11 @@ const { Colors } = require("../../config");
 module.exports = async (user, guild, message) => {
     const { leveling, levelingactive } = guild;
 
-		function LevelUp(user, message, level) {
+		function LevelUp(member, message, level) {
 			let embed = new RichEmbed()
 			.setTitle("Level Up!")
 			.setColor(Colors.SUCCESS)
-			.setDescription(`Congrats, **${user.name}**, you've advanced to level ${level}`);
+			.setDescription(`Congrats, **${member.name}**, you've advanced to level ${level}`);
 			message.channel.send(embed);
 		}
 		
