@@ -50,7 +50,7 @@ module.exports.run = (client, message, args, { guild }) => {
 			.setDescription("Successfully set the prefix to: `" + newPrefix + "`")
 			.setFooter(message.author.tag, message.author.displayAvatarURL);
 
-		log(guild, "Prefix", message.author.tag, "Set to", newPrefix);
+		log(message, guild, "Prefix", message.author.tag, "Set to", newPrefix);
 
 		return message.channel.send(setPrefix);
 	}

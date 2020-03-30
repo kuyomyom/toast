@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args, { error }) => {
 			.setTimestamp();
 		message.channel.send(adminEmbed);
 
-		log(guild, "Admin Role", message.author.tag, "Role", newRole);
+		log(message, guild, "Admin Role", message.author.tag, "Role", newRole);
 	}
 	catch (e) {
 		error(e.stack);

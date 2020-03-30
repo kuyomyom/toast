@@ -42,7 +42,7 @@ module.exports.run = async (client, message, args, { guild, error }) => {
 
 		message.channel.send(filterEmbed);
 
-		log(guild, "Command Channel", message.author.tag, "Channel", `${message.mentions.channels.first().name} - ${t}`);
+		log(message, guild, "Command Channel", message.author.tag, "Channel", `${message.mentions.channels.first().name} - ${t}`);
 
 	}
 	catch (e) {

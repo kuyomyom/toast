@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 
 		if (type === "enable") {
 			database.guilds.update(message.guild.id, { levelingactive: true });
-			log(guild, "Leveling", message.author.tag, "Set to", "Enabled");
+			log(message, guild, "Leveling", message.author.tag, "Set to", "Enabled");
 			return message.channel.send(
 				new RichEmbed().setTitle("Leveling").setColor(Colors.SUCCESS).setDescription(`**Moderator**: ${message.author.tag}\n**Set to**: Enabled`).setFooter(message.author.tag, message.author.displayAvatarURL).setTimestamp()
 			);
@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args, { guild, user, error }) => {
 
 		if (type === "disable") {
 			database.guilds.update(message.guild.id, { levelingactive: false });
-			log(guild, "Leveling", message.author.tag, "Set to", "Disabled");
+			log(message, guild, "Leveling", message.author.tag, "Set to", "Disabled");
 			return message.channel.send(
 				new RichEmbed().setTitle("Leveling").setColor(Colors.SUCCESS).setDescription(`**Moderator**: ${message.author.tag}\n**Set to**: Disabled`).setFooter(message.author.tag, message.author.displayAvatarURL).setTimestamp()
 			);
