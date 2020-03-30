@@ -21,7 +21,7 @@ database.guilds.create = async (id, {
 	wordblacklist = [],
 	commandchannels = [],
 } = {}) => {
-	const data = { premium, prefix, modrole, adminrole, wordblacklist, commandchannels, moderation, wordblacklistactive, leveling, economy, economyactive, levelingactive };
+	const data = { premium, prefix, modrole, adminrole, wordblacklist, logchannel, commandchannels, moderation, wordblacklistactive, leveling, economy, economyactive, levelingactive };
 	const existing = await database.collection("guilds").get(id);
 	if (existing) return existing;
 	await database.collection("guilds").insert(id, data);
@@ -41,6 +41,7 @@ database.guilds.delete = async (id) => {
 	return await database.collection("guilds").delete(id);
 };
 
+database.guilds.updateMany({}, { $set: { logchannel: null } });
 
 // Users
 
