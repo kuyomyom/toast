@@ -4,6 +4,8 @@ const { Colors } = require("../../config")
 
 module.exports = async (guild, action, moderator, newType, newValue) => {
     if (guild.logchannel === null) return;
+
+    await message.guild.fetchChannels();
     if (!guild.channels.get(guild.logchannel)) return;
 
     const embed = new RichEmbed()
