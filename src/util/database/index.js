@@ -37,6 +37,10 @@ database.guilds.update = async (...data) => {
 	return await database.collection("guilds").update(...data);
 };
 
+database.guilds.updateMany = async (...data) => {
+	return await database.collection("guilds").updateMany(...data);
+};
+
 database.guilds.delete = async (id) => {
 	return await database.collection("guilds").delete(id);
 };
