@@ -5,11 +5,11 @@ const { Colors } = require("../../config");
 module.exports = async (user, guild, message) => {
     const { leveling, levelingactive } = guild;
 
-		function LevelUp(member, message, level) {
+		function LevelUp(message, level) {
 			let embed = new RichEmbed()
 			.setTitle("Level Up!")
 			.setColor(Colors.SUCCESS)
-			.setDescription(`Congrats, **${member.name}**, you've advanced to level ${level}`);
+			.setDescription(`Congrats, **${message.author.username}**, you've advanced to level ${level}`);
 			message.channel.send(embed);
 		}
 		
@@ -29,7 +29,7 @@ module.exports = async (user, guild, message) => {
             if (userLeveling.xp >= userLeveling.lastXP) {
                 userLeveling.level++;
                 Math.floor(userLeveling.lastXP *= 2.2);
-                LevelUp(message.author, message, userLeveling.level);
+                LevelUp(message, userLeveling.level);
             }
 
             await database.guilds.update(guild._id, { leveling: Array.from(leveling) });
